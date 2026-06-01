@@ -35,7 +35,7 @@ object TransactionMapper {
             transactionId = transaction.id,
             amount = transaction.money.amount,
             asset = transaction.money.asset,
-            type = transaction.type,
+            type = transaction.type.displayName,
             fee = fee.money.amount,
             rate = fee.rate,
             description = fee.description

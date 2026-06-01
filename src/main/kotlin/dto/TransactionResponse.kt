@@ -1,7 +1,6 @@
 package dto
 
 import enums.Asset
-import enums.TransactionType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import common.serializer.BigDecimalSerializer
@@ -20,7 +19,7 @@ data class TransactionResponse(
 
     val asset: Asset,
 
-    val type: TransactionType,
+    val type: String,
 
     @Serializable(with = BigDecimalSerializer::class)
     val fee: BigDecimal,

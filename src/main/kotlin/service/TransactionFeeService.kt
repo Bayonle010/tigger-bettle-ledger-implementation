@@ -3,12 +3,11 @@ package service
 import domain.Fee
 import domain.Money
 import domain.Transaction
-import dto.FeeCalculationResult
 
-class TransactionService(
+class TransactionFeeService(
     private val feeCalculator: FeeCalculator
 ) {
-    fun calculate(transaction: Transaction): Fee {
+    fun calculateFee(transaction: Transaction): Fee {
         val result = feeCalculator.calculate(transaction.money.amount)
 
         return Fee(
