@@ -1,5 +1,5 @@
 package enums
 
-enum class Asset {
-    USD
+enum class Asset(val scale: Int) {
+    USD(2)
 }

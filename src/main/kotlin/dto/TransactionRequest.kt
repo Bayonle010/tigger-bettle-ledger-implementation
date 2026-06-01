@@ -1,4 +1,4 @@
-package com.cashi.dto
+package dto
 
 import enums.Asset
 import enums.AssetType
