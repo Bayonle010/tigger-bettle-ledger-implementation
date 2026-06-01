@@ -4,8 +4,8 @@ import enums.Asset
 import enums.TransactionType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import shared.serializer.BigDecimalSerializer
-import shared.serializer.UUIDSerializer
+import common.serializer.BigDecimalSerializer
+import common.serializer.UUIDSerializer
 import java.math.BigDecimal
 import java.util.UUID
 

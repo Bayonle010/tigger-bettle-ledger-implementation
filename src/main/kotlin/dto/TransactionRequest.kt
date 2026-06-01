@@ -6,8 +6,8 @@ import enums.TransactionState
 import enums.TransactionType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import shared.serializer.BigDecimalSerializer
-import shared.serializer.InstantSerializer
+import common.serializer.BigDecimalSerializer
+import common.serializer.InstantSerializer
 import java.math.BigDecimal
 import java.time.Instant
 
