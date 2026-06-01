@@ -2,6 +2,7 @@ package routes
 
 import common.exception.MissingIdempotencyKeyException
 import common.http.IDEMPOTENCY_KEY_HEADER
+import common.response.ResponseFactory
 import dto.TransactionRequest
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.request.receive
@@ -36,8 +37,11 @@ fun Route.transactionRoutes(
         )
 
         call.respond(
-            status = HttpStatusCode.OK,
-            message = response
+            ResponseFactory.success(
+                message = "Fee Calculated Successfully",
+                details = "Transaction fee processed successfully",
+                data = response
+            )
         )
     }
 }

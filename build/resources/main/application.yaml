@@ -3,6 +3,4 @@ ktor:
     port: 8080
   application:
     modules:
-      - com.cashi.SerializationKt.configureSerialization
-      - com.cashi.StatusPagesKt.configureStatusPages
-      - com.cashi.RoutingKt.configureRouting
+      - com.cashi.ApplicationKt.module
