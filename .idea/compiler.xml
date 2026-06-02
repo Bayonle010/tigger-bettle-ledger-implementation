@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/sdk-api-gen/2.4.1/356a8cf49811eb543180f0ce2a2a999ca094b7ce/sdk-api-gen-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/sdk-api-gen-common/2.4.1/20a49a4a4f470df0a775e6ec2d94e8092adde3a6/sdk-api-gen-common-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/sdk-api/2.4.1/4487e8c41c7f7e8fc999a5d979994b161d4406ba/sdk-api-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jknack/handlebars/4.5.0/92a6041ba1eee8ddf79112f791f0f1bdd123a007/handlebars-4.5.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/sdk-common/2.4.1/b2bbe2a4f5396717d59b8043f7148ed8a45b67f1/sdk-common-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-nop/2.0.16/d8d657e5b08dfbad70758fc8c47c58372272e08c/slf4j-nop-2.0.16.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/sdk-serde-jackson/2.4.1/5f59e3644453abce2c6d37de1a442a7a7e9aeeac/sdk-serde-jackson-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.14.0/adcb0d4c67eabc79682604b47eb852aaff21138a/commons-text-1.14.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.18.0/fb14946f0e39748a6571de0635acbe44e7885491/commons-lang3-3.18.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.victools/jsonschema-generator/4.38.0/2b24dbc099c58c50aa8d9d2fa755d75d5e97f0e5/jsonschema-generator-4.38.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.victools/jsonschema-module-jackson/4.38.0/c924f0d657ddf66b624f584e76edc0bfc50d2988/jsonschema-module-jackson-4.38.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.17/d9e58ac9c7779ba3bf8142aff6c830617a7fe60f/slf4j-api-2.0.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.18.4/21e5645ac25cd6c281cfc9e51df031055d26ffd6/jackson-annotations-2.18.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.18.4/7533a629c563ef6a5e2424d6ff3654155abea6b0/jackson-databind-2.18.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.18.4/cdcc3706edf9b847a55aecad4d1ddb87250882ca/jackson-core-2.18.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.47.0/9de168f2c648c33b86136f51a4584bde9a705ff1/opentelemetry-api-1.47.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.restate/common/2.4.1/857664a751e36d2f7c9a6a9e59c4a5bcc05cb58/common-2.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.10/30de6faa127a4a012db8e71bf1b9c0a99b1402b2/kotlin-stdlib-2.2.10.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.47.0/86e49fe98ce06c279f7b9f028af8658cb7bc972a/opentelemetry-context-1.47.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.7.0/e98374da1f2143ac8e6e0a95036994bb19137a3/classmate-1.7.0.jar" />
+        </processorPath>
+        <module name="ledger.main" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel target="21" />
   </component>
 </project>

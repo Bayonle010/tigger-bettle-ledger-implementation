@@ -16,7 +16,7 @@ import java.time.Instant
 
 class TigerBeetleLedgerService : LedgerService {
 
-    override suspend fun recordFee(
+    override fun recordFee(
         transaction: Transaction,
         fee: Fee
     ): LedgerTransferResult {

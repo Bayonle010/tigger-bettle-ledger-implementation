@@ -28,6 +28,9 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:4.1.0")
     implementation("io.insert-koin:koin-logger-slf4j:4.1.0")
 
+    annotationProcessor("dev.restate:sdk-api-gen:2.4.1")
+    implementation("dev.restate:sdk-java-http:2.4.1")
+
     testImplementation(kotlin("test"))
     testImplementation(ktorLibs.server.testHost)
 

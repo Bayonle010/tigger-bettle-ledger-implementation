@@ -5,7 +5,7 @@ import domain.Fee
 import domain.Transaction
 
 interface LedgerService {
-    suspend fun recordFee(
+    fun recordFee(
         transaction: Transaction,
         fee : Fee
     ) : LedgerTransferResult
