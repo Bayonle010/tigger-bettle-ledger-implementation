@@ -28,7 +28,7 @@ class TigerBeetleLedgerService : LedgerService {
 
             transfers.add()
             transfers.setId(TigerBeetleIdMapper.fromUuid(transferId))
-            transfers.setDebitAccountId(SystemAccountId.CUSTOMER_WALLET)
+            transfers.setDebitAccountId(SystemAccountId.CUSTOMER_LIABILITY_POOL)
             transfers.setCreditAccountId(SystemAccountId.PLATFORM_FEE_REVENUE)
             transfers.setAmount(amountMinorUnits)
             transfers.setLedger(LedgerIds.USD)
