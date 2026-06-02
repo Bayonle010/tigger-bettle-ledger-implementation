@@ -1,16 +1,18 @@
 package service
 
+import com.cashi.ledger.LedgerService
 import domain.Fee
 import domain.Money
 import domain.Transaction
 
 class TransactionFeeService(
-    private val feeCalculator: FeeCalculator
+    private val feeCalculator: FeeCalculator,
+    private val ledgerService: LedgerService
 ) {
-    fun calculateFee(transaction: Transaction): Fee {
+    suspend fun calculateFee(transaction: Transaction): Fee {
         val result = feeCalculator.calculate(transaction.money.amount)
 
-        return Fee(
+        val fee = Fee(
             transactionId = transaction.id,
             money = Money(
                 amount = result.fee,
@@ -19,6 +21,12 @@ class TransactionFeeService(
             rate = result.rate,
             description = "Standard fee rate of 0.15%"
         )
-    }
 
+        ledgerService.recordFee(
+            transaction = transaction,
+            fee = fee
+        )
+
+        return fee
+    }
 }
