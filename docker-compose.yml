@@ -1,0 +1,16 @@
+services:
+  tigerbeetle:
+    image: ghcr.io/tigerbeetle/tigerbeetle:0.17.4
+    container_name: cashi-tigerbeetle
+    command: >
+      sh -c "
+      tigerbeetle format --cluster=0 --replica=0 --replica-count=1 --development /data/0_0.tigerbeetle || true &&
+      tigerbeetle start --addresses=0.0.0.0:3000 --development /data/0_0.tigerbeetle
+      "
+    ports:
+      - "3000:3000"
+    volumes:
+      - tigerbeetle-data:/data
+
+volumes:
+  tigerbeetle-data:
