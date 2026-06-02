@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="service.FeeCalculatorFeatureTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-01T23:07:38.391Z" hostname="SIRYOUNGTECHNOL" time="0.422">
-  <properties/>
-  <testcase name="Calculate standard fee for a mobile top up transaction" classname="service.FeeCalculatorFeatureTest" time="0.287"/>
-  <testcase name="Round calculated fee to two decimal places" classname="service.FeeCalculatorFeatureTest" time="0.01"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
