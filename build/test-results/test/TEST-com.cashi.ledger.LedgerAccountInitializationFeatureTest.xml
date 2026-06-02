@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cashi.ledger.LedgerAccountInitializationFeatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-02T16:38:36.243Z" hostname="SIRYOUNGTECHNOL" time="1.242">
+  <properties/>
+  <testcase name="Create required system accounts in TigerBeetle" classname="com.cashi.ledger.LedgerAccountInitializationFeatureTest" time="1.242"/>
+  <system-out><![CDATA[Account at 0 already exists
+Account at 1 already exists
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
