@@ -1,7 +1,7 @@
 package di
 
-import com.cashi.ledger.FakeLedgerService
-import com.cashi.ledger.LedgerService
+import com.cashi.ledger.service.FakeLedgerService
+import com.cashi.ledger.service.LedgerService
 import org.koin.dsl.module
 import service.FeeCalculator
 import service.IdempotencyStore

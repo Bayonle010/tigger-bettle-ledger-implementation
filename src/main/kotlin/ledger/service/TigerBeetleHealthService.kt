@@ -1,4 +1,6 @@
-package com.cashi.ledger
+package com.cashi.ledger.service
+
+import com.cashi.ledger.TigerBeetleClientFactory
 
 class TigerBeetleHealthService {
 

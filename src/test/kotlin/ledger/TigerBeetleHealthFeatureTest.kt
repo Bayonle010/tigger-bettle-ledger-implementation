@@ -1,5 +1,6 @@
 package com.cashi.ledger
 
+import com.cashi.ledger.service.TigerBeetleHealthService
 import io.kotest.core.spec.style.FeatureSpec
 
 class TigerBeetleHealthFeatureTest : FeatureSpec({

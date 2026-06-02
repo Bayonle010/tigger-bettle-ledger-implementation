@@ -1,5 +1,7 @@
-package com.cashi.ledger
+package com.cashi.ledger.service
 
+import com.cashi.ledger.LedgerTransferResult
+import com.cashi.ledger.LedgerTransferStatus
 import domain.Fee
 import domain.Transaction
 

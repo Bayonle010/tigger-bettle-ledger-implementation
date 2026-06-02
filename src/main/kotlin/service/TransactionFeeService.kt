@@ -1,6 +1,6 @@
 package service
 
-import com.cashi.ledger.LedgerService
+import com.cashi.ledger.service.LedgerService
 import domain.Fee
 import domain.Money
 import domain.Transaction
