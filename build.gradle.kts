@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(ktorLibs.plugins.ktor)
     alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.kapt") version "2.3.21"
 }
 
 group = "com.cashi"
@@ -28,7 +29,7 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:4.1.0")
     implementation("io.insert-koin:koin-logger-slf4j:4.1.0")
 
-    annotationProcessor("dev.restate:sdk-api-gen:2.4.1")
+    kapt("dev.restate:sdk-api-gen:2.4.1")
     implementation("dev.restate:sdk-java-http:2.4.1")
 
     testImplementation(kotlin("test"))
@@ -40,4 +41,11 @@ dependencies {
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+tasks.register<JavaExec>("runRestate") {
+    group = "application"
+    description = "Runs the Restate workflow service"
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.cashi.workflow.RestateApplicationKt")
 }

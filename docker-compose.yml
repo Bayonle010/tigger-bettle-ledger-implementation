@@ -14,5 +14,20 @@ services:
     volumes:
       - tigerbeetle-data:/data
 
+
+  restate:
+    image: docker.restate.dev/restatedev/restate:latest
+    container_name: cashi-restate
+    ports:
+      - "8080:8080"
+      - "9070:9070"
+      - "9071:9071"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - restate-data:/restate-data
+
 volumes:
   tigerbeetle-data:
+  restate-data:
+

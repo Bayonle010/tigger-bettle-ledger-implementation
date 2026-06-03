@@ -1,5 +1,8 @@
 package com.cashi.ledger
 
+import com.cashi.ledger.mapper.LedgerAccountCode
+import com.cashi.ledger.mapper.LedgerIds
+import com.cashi.ledger.service.SystemAccountId
 import com.tigerbeetle.AccountBatch
 import com.tigerbeetle.AccountFlags
 import com.tigerbeetle.CreateAccountStatus
@@ -11,9 +14,9 @@ class LedgerAccountInitializer {
             val accounts = AccountBatch(2)
 
             accounts.add()
-            accounts.setId(SystemAccountId.CUSTOMER_WALLET)
+            accounts.setId(SystemAccountId.CUSTOMER_LIABILITY_POOL)
             accounts.setLedger(LedgerIds.USD)
-            accounts.setCode(LedgerAccountCode.CUSTOMER_WALLET)
+            accounts.setCode(LedgerAccountCode.CUSTOMER_LIABILITY_POOL)
             accounts.setFlags(AccountFlags.NONE)
 
             accounts.add()
