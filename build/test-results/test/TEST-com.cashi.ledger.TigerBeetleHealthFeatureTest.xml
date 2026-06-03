@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cashi.ledger.TigerBeetleHealthFeatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-03T17:06:03.551Z" hostname="SIRYOUNGTECHNOL" time="0.036">
+<testsuite name="com.cashi.ledger.TigerBeetleHealthFeatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-03T23:35:39.445Z" hostname="SIRYOUNGTECHNOL" time="0.111">
   <properties/>
-  <testcase name="Connect to local TigerBeetle replica" classname="com.cashi.ledger.TigerBeetleHealthFeatureTest" time="0.036"/>
+  <testcase name="Connect to local TigerBeetle replica" classname="com.cashi.ledger.TigerBeetleHealthFeatureTest" time="0.111"/>
   <system-out><![CDATA[Successfully connected to TigerBeetle
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

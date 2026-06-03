@@ -10,7 +10,10 @@ class TransactionFeeService(
     private val workflowExecutor: FeeRecordingWorkflowExecutor
 ) {
     suspend fun calculateFee(transaction: Transaction): Fee {
-        val result = feeCalculator.calculate(transaction.money.amount)
+        val result = feeCalculator.calculate(
+            amount = transaction.money.amount,
+            transactionType = transaction.type
+        )
 
         val fee = Fee(
             transactionId = transaction.id,
