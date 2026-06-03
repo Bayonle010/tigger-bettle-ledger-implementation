@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cashi.service.TransactionFeeServiceFeatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-03T17:06:03.629Z" hostname="SIRYOUNGTECHNOL" time="0.065">
+  <properties/>
+  <testcase name="Calculate fee and invoke fee recording workflow" classname="com.cashi.service.TransactionFeeServiceFeatureTest" time="0.065"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

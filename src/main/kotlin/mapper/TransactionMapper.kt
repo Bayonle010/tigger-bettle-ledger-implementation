@@ -20,7 +20,7 @@ object TransactionMapper {
                 amount = request.amount,
                 asset = request.asset
             ),
-            assetType = request.asset,
+            assetType = request.assetType,
             type = request.type,
             state = request.state,
             createdAt = request.createdAt

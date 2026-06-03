@@ -1,9 +1,10 @@
 package com.cashi.workflow
 
-import domain.Fee
-import domain.Transaction
-
 data class RecordFeeCommand(
-    val transaction: Transaction,
-    val fee: Fee
+    val transactionId: String,
+    val idempotencyKey: String,
+    val feeMinorUnits: Long,
+    val asset: String,
+    val transactionType: String,
+    val createdAtEpochMillis: Long
 )

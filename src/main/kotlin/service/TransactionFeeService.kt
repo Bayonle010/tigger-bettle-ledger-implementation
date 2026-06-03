@@ -1,13 +1,13 @@
 package service
 
-import com.cashi.ledger.service.LedgerService
+import com.cashi.workflow.FeeRecordingWorkflowExecutor
 import domain.Fee
 import domain.Money
 import domain.Transaction
 
 class TransactionFeeService(
     private val feeCalculator: FeeCalculator,
-    private val ledgerService: LedgerService
+    private val workflowExecutor: FeeRecordingWorkflowExecutor
 ) {
     suspend fun calculateFee(transaction: Transaction): Fee {
         val result = feeCalculator.calculate(transaction.money.amount)
@@ -22,7 +22,7 @@ class TransactionFeeService(
             description = "Standard fee rate of 0.15%"
         )
 
-        ledgerService.recordFee(
+        workflowExecutor.recordFee(
             transaction = transaction,
             fee = fee
         )

@@ -10,7 +10,7 @@ class FeeCalculator {
         private const val MONEY_SCALE = 2
     }
 
-    fun     calculate(amount: BigDecimal): FeeCalculationResult {
+    fun calculate(amount: BigDecimal): FeeCalculationResult {
         val fee = amount
             .multiply(DEFAULT_RATE)
             .setScale(MONEY_SCALE, RoundingMode.HALF_UP)

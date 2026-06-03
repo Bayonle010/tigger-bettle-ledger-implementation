@@ -2,6 +2,8 @@ package di
 
 import com.cashi.ledger.service.LedgerService
 import com.cashi.ledger.service.TigerBeetleLedgerService
+import com.cashi.workflow.FeeRecordingWorkflowExecutor
+import com.cashi.workflow.RestateFeeRecordingWorkflowClient
 import org.koin.dsl.module
 import service.FeeCalculator
 import service.IdempotencyStore
@@ -11,5 +13,10 @@ val appModule = module {
     single { FeeCalculator() }
     single { IdempotencyStore() }
     single<LedgerService> { TigerBeetleLedgerService() }
-    single { TransactionFeeService(get(), get ()) }
+    single<FeeRecordingWorkflowExecutor> {
+            RestateFeeRecordingWorkflowClient(
+            restateBaseUrl = "http://localhost:8080"
+        )
+    }
+    single { TransactionFeeService(feeCalculator = get(), workflowExecutor = get ()) }
 }
