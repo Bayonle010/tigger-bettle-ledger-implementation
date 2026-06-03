@@ -7,11 +7,6 @@ import domain.Transaction
 
 interface LedgerService {
     fun recordFee(
-        transaction: Transaction,
-        fee: Fee
-    ): LedgerTransferResult
-
-    fun recordFee(
         command: RecordFeeLedgerCommand
     ): LedgerTransferResult
 }

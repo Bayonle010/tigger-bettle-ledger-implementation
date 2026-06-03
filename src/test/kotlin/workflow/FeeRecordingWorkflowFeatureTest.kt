@@ -63,11 +63,4 @@ private class FakeLedgerService : LedgerService {
             status = LedgerTransferStatus.CREATED
         )
     }
-
-    override fun recordFee(
-        transaction: Transaction,
-        fee: Fee
-    ): LedgerTransferResult {
-        error("Domain-object recordFee should not be used by workflow")
-    }
 }
