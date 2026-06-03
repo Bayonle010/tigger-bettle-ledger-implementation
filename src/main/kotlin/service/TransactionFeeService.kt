@@ -4,6 +4,7 @@ import com.cashi.workflow.FeeRecordingWorkflowExecutor
 import domain.Fee
 import domain.Money
 import domain.Transaction
+import java.math.BigDecimal
 
 class TransactionFeeService(
     private val feeCalculator: FeeCalculator,
@@ -22,7 +23,13 @@ class TransactionFeeService(
                 asset = transaction.money.asset
             ),
             rate = result.rate,
-            description = "Standard fee rate of 0.15%"
+
+            description = "Standard fee rate of ${
+                result.rate
+                    .multiply(BigDecimal("100"))
+                    .stripTrailingZeros()
+                    .toPlainString()
+            }%"
         )
 
         workflowExecutor.recordFee(
