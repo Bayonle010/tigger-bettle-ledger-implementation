@@ -1,4 +1,39 @@
 services:
+  cashi-api:
+    build: .
+    container_name: cashi-api
+    ports:
+      - "8081:8081"
+    depends_on:
+      - tigerbeetle
+      - restate
+    environment:
+      - RESTATE_BASE_URL=http://restate:8080
+      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
+
+
+  cashi-init-ledger:
+    build: .
+    container_name: cashi-init-ledger
+    command: [ "/app/bin/cashi-init-ledger" ]
+    depends_on:
+      - tigerbeetle
+    environment:
+      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
+  
+
+  cashi-workflow:
+    build: .
+    container_name: cashi-workflow
+    command: [ "/app/bin/cashi-restate-workflow" ]
+    ports:
+      - "9080:9080"
+    depends_on:
+      - tigerbeetle
+      - restate
+    environment:
+      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
+
   tigerbeetle:
     image: ghcr.io/tigerbeetle/tigerbeetle:0.17.4
     container_name: cashi-tigerbeetle

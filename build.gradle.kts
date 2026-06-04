@@ -55,3 +55,36 @@ tasks.register<JavaExec>("runRestate") {
     classpath = sourceSets["main"].runtimeClasspath
     mainClass.set("com.cashi.workflow.RestateApplicationKt")
 }
+
+tasks.register<CreateStartScripts>("restateStartScripts") {
+    applicationName = "cashi-restate-workflow"
+    mainClass.set("com.cashi.workflow.RestateApplicationKt")
+    classpath = tasks.named<CreateStartScripts>("startScripts").get().classpath
+    outputDir = tasks.named<CreateStartScripts>("startScripts").get().outputDir
+}
+
+tasks.named("installDist") {
+    dependsOn("restateStartScripts")
+}
+
+
+tasks.register<JavaExec>("initLedger") {
+    group = "application"
+    description = "Initializes TigerBeetle system accounts"
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.cashi.ledger.LedgerInitializerApplicationKt")
+}
+
+
+
+tasks.register<CreateStartScripts>("ledgerInitStartScripts") {
+    applicationName = "cashi-init-ledger"
+    mainClass.set("com.cashi.ledger.LedgerInitializerApplicationKt")
+    classpath = tasks.named<CreateStartScripts>("startScripts").get().classpath
+    outputDir = tasks.named<CreateStartScripts>("startScripts").get().outputDir
+}
+
+tasks.named("installDist") {
+    dependsOn("restateStartScripts")
+    dependsOn("ledgerInitStartScripts")
+}
