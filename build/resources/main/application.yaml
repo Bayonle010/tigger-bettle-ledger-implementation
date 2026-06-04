@@ -1,6 +1,0 @@
-ktor:
-  deployment:
-    port: 8081
-  application:
-    modules:
-      - com.cashi.ApplicationKt.module
