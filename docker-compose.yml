@@ -1,29 +1,38 @@
 services:
   cashi-api:
     build: .
+    image: cashi-ledger-app:latest
     container_name: cashi-api
     ports:
       - "8081:8081"
     depends_on:
       - tigerbeetle
       - restate
+    security_opt:
+      - seccomp=unconfined
     environment:
       - RESTATE_BASE_URL=http://restate:8080
-      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
-
+      - TIGERBEETLE_ADDRESS=172.30.0.10:3000
+    networks:
+      - cashi-net
 
   cashi-init-ledger:
     build: .
+    image: cashi-ledger-app:latest
     container_name: cashi-init-ledger
     command: [ "/app/bin/cashi-init-ledger" ]
     depends_on:
       - tigerbeetle
+    security_opt:
+      - seccomp=unconfined
     environment:
-      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
-  
+      - TIGERBEETLE_ADDRESS=172.30.0.10:3000
+    networks:
+      - cashi-net
 
   cashi-workflow:
     build: .
+    image: cashi-ledger-app:latest
     container_name: cashi-workflow
     command: [ "/app/bin/cashi-restate-workflow" ]
     ports:
@@ -31,24 +40,31 @@ services:
     depends_on:
       - tigerbeetle
       - restate
+    security_opt:
+      - seccomp=unconfined
     environment:
-      - TIGERBEETLE_ADDRESS=tigerbeetle:3000
+      - TIGERBEETLE_ADDRESS=172.30.0.10:3000
+    networks:
+      - cashi-net
 
   tigerbeetle:
     image: ghcr.io/tigerbeetle/tigerbeetle:0.17.4
     container_name: cashi-tigerbeetle
     security_opt:
       - seccomp=unconfined
-    command:
-      - start
-      - --addresses=0.0.0.0:3000
-      - --development
-      - /data/0_0.tigerbeetle
+    entrypoint: [ "/bin/sh", "-c" ]
+    command: >
+      "if [ ! -f /data/0_0.tigerbeetle ]; then
+        /tigerbeetle format --cluster=0 --replica=0 --replica-count=1 --development /data/0_0.tigerbeetle;
+      fi &&
+      /tigerbeetle start --addresses=0.0.0.0:3000 --development /data/0_0.tigerbeetle"
     ports:
       - "3000:3000"
     volumes:
       - tigerbeetle-data:/data
-
+    networks:
+      cashi-net:
+        ipv4_address: 172.30.0.10
 
   restate:
     image: docker.restate.dev/restatedev/restate:latest
@@ -61,8 +77,16 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - restate-data:/restate-data
+    networks:
+      - cashi-net
 
 volumes:
   tigerbeetle-data:
   restate-data:
 
+networks:
+  cashi-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

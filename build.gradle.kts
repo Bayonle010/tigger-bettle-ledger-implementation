@@ -63,9 +63,6 @@ tasks.register<CreateStartScripts>("restateStartScripts") {
     outputDir = tasks.named<CreateStartScripts>("startScripts").get().outputDir
 }
 
-tasks.named("installDist") {
-    dependsOn("restateStartScripts")
-}
 
 
 tasks.register<JavaExec>("initLedger") {

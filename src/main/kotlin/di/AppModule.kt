@@ -14,8 +14,8 @@ val appModule = module {
     single { IdempotencyStore() }
     single<LedgerService> { TigerBeetleLedgerService() }
     single<FeeRecordingWorkflowExecutor> {
-            RestateFeeRecordingWorkflowClient(
-            restateBaseUrl = "http://localhost:8080"
+        RestateFeeRecordingWorkflowClient(
+            restateBaseUrl = System.getenv("RESTATE_BASE_URL") ?: "http://localhost:8080"
         )
     }
     single { TransactionFeeService(feeCalculator = get(), workflowExecutor = get ()) }

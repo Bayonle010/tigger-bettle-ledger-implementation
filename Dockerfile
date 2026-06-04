@@ -5,5 +5,5 @@ RUN gradle clean installDist --no-daemon
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
-COPY --from=build /app/build/install/cashi-ledger-task /app
-ENTRYPOINT ["/app/bin/cashi-ledger-task"]
+COPY --from=build /app/build/install/ledger /app
+CMD ["/app/bin/ledger"]
