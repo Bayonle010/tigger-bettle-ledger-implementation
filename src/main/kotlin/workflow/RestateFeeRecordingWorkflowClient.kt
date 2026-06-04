@@ -4,7 +4,7 @@ import domain.Fee
 import domain.Transaction
 
 class RestateFeeRecordingWorkflowClient(
-    private val restateBaseUrl: String = "http://localhost:8080"
+    private val restateBaseUrl: String = System.getenv("RESTATE_BASE_URL") ?: "http://localhost:8080"
 ) : FeeRecordingWorkflowExecutor {
 
     override suspend fun recordFee(
