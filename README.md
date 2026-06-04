@@ -112,7 +112,13 @@ docker compose version
 
 ### Start All Services
 
-From the project root, run:
+From the project root, first pull the latest changes from the `main` branch:
+
+```bash
+git pull origin main
+```
+
+Then start all services:
 
 ```bash
 docker compose up --build
