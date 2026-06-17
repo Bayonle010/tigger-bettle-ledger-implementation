@@ -4,11 +4,13 @@ import com.cashi.ledger.LedgerTransferResult
 import com.cashi.ledger.RecordFeeLedgerCommand
 import com.cashi.ledger.service.LedgerService
 import dev.restate.sdk.WorkflowContext
+import dev.restate.sdk.annotation.CustomSerdeFactory
 import dev.restate.sdk.annotation.Workflow
 import enums.TransactionType
 import java.util.UUID
 
 @Workflow
+@CustomSerdeFactory(KotlinJacksonSerdeFactory::class)
 class FeeRecordingWorkflow(
     private val ledgerService: LedgerService
 ) {

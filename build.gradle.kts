@@ -32,6 +32,10 @@ dependencies {
     kapt("dev.restate:sdk-api-gen:2.4.1")
     implementation("dev.restate:sdk-java-http:2.4.1")
 
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+
     implementation("io.ktor:ktor-client-core:3.5.0")
     implementation("io.ktor:ktor-client-cio:3.5.0")
     implementation("io.ktor:ktor-client-content-negotiation:3.5.0")
