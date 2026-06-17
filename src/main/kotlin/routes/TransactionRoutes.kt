@@ -61,7 +61,7 @@ fun Route.transactionRoutes(
             HttpStatusCode.OK,
             ResponseFactory.success(
                 message = "Fee Calculated Successfully",
-                details = "Transaction fee processed successfully",
+                details = "Fee recording is processing.",
                 data = response
             )
         )
