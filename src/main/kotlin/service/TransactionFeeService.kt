@@ -31,12 +31,17 @@ class TransactionFeeService(
                     .toPlainString()
             }%"
         )
+        return fee
+    }
 
+    suspend fun recordFeeAsync(
+        transaction: Transaction,
+        fee: Fee
+    ) {
         workflowExecutor.recordFee(
             transaction = transaction,
             fee = fee
         )
-
-        return fee
     }
+
 }

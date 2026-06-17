@@ -57,6 +57,11 @@ fun Route.transactionRoutes(
             response = response
         )
 
+        transactionFeeService.recordFeeAsync(
+            transaction = transaction,
+            fee = fee
+        )
+
         call.respond(
             HttpStatusCode.OK,
             ResponseFactory.success(
